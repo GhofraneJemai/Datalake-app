@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h4>Right Click</h4>
+      <button mat-button (click)="opened=!opened"><mat-icon>menu</mat-icon></button>
+      <button mat-button><mat-icon>home</mat-icon> Home</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+    <mat-sidenav-container >
+      <mat-sidenav [(opened)]="opened" mode="side">
+
+        <mat-list>
+            <mat-list-item [routerLink]="['../index']">Home</mat-list-item>
+            <mat-list-item [routerLink]="['about-us']">About-Us</mat-list-item>
+            <mat-list-item [routerLink]="['login']">Login</mat-list-item>
+            <mat-list-item [routerLink]="['register']">Register</mat-list-item>
+        </mat-list>
+
+
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <img src="assets/images/Datalake.png">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+    
